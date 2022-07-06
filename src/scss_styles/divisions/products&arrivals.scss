@@ -61,7 +61,7 @@
 .notify{
     @include flexBox(false, false, space-between, center, false, false);
     display: none;
-    width: 500px;
+    width: 400px;
     padding: 15px 25px;
     background-color: #ddd;
     position: fixed;
@@ -85,5 +85,12 @@
     > i::before{
         font-size: 25px;
         cursor: pointer;
+    }
+    @include breakPoints(3, 400px, 500px){
+        width: calc(100% - 20px);
+        left: 10px;
+    }
+    @include breakPoints(2, 399px, false){
+        visibility: hidden;
     }
 }
