@@ -6,7 +6,7 @@
   <li> PugJS (HTML Template Engine) </li>
   <li> SCSS (CSS Preprocessor)
   <li> Pure JavaScript (without any library or framework)
-  <li> GulpJS (Task Runner)
+  <li> Gulp.JS (Task Runner)
 </ul>
 <h3>Usage :</h3>
 <div> 
