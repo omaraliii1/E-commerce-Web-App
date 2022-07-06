@@ -1,0 +1,48 @@
+@use "../../scss_include/variables.scss" as *;
+@use "../../scss_include/mixins.scss" as *;
+.choosenProd{
+    margin: $sec-pad 0 calc(3 * $sec-pad);
+    .container{
+        @include breakPoints(1, 768px, false){
+            @include flexBox(false, false, space-between, flex-start, false, 50px);
+            .col{
+                width: calc(calc(100% - 25px) / 2);
+            }
+        }
+        .col:first-child{
+            img{
+                width: 100%;
+            }
+            .choosenSpace{
+                margin-bottom: 7.5px;
+            }
+            .optSpace{
+                @include flexBox(false, false, space-between, center, false, 10px);
+                img{
+                    width: calc(calc(100% - 30px) / 4);
+                    cursor: pointer;
+                }
+            }
+        }
+        .col:last-child{
+            .op{
+                @include flexBox(false, false, flex-start, center, false, 7.5px);
+                select,
+                input{
+                    padding: 7px 5px;
+                    border: 2px solid #000;
+                    border-radius: 5px;
+                }
+                input{
+                    width: 35px;
+                    padding: 6px 0;
+                    text-align: center;
+                }
+                button{
+                    background-color: $hover-color;
+                    padding: 10px 15px;
+                }
+            }
+        }
+    }
+}

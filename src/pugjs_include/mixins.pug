@@ -1,0 +1,26 @@
+mixin features(feats)
+    - for(let i = 0; i < feats.length; i+=2)
+        .feat #[img(src=feats[i] alt="feature")] #[h4 #{feats[i+1]}]
+
+mixin products(prods)
+    - for(let i = 0; i < prods.length; i++)
+        .product
+            a(href="singleProd.html" title="single product page"): img(src=prods[i] alt="product")
+            .info
+                a(href="singleProd.html" title="single product page"): .static 
+                    h5 adidas 
+                    h4 Cartoon Astronaut T-Shirts
+                    - for(let i = 0; i < 5; i++)
+                        <i class="icon-star"></i>
+                .op 
+                    h4 $78
+                    i.icon-shopping-cart
+
+
+mixin st-banner(st)
+    - for(let i = 0; i < st.length; i++)
+        div #[h4=st[i][0]] #[h2=st[i][1]] #[h5=st[i][2]] #[a(href="shop.html") #[button=st[i][3]]]
+
+mixin nd-banner(nd)
+    - for(let i = 0; i < nd.length; i++)
+        div #[h2=nd[i][0]] #[p=nd[i][1]]

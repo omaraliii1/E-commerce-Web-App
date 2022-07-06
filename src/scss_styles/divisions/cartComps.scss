@@ -1,0 +1,113 @@
+@use "../../scss_include/variables.scss" as *;
+@use "../../scss_include/mixins.scss" as *;
+.cart{
+    overflow-x: auto;
+    width: 85%;
+    margin: 0 auto;
+    table{
+        width: 100%;
+        min-width: 800px;
+        border-bottom: 1px solid #ddd;
+        border-collapse: collapse;
+        thead th{
+            border: 1px solid #ddd;
+            border-left-width: 0;
+            border-right-width: 0;
+            padding: 20px 0;
+            width: calc(100% / 6);
+        }
+        tbody tr td{
+            text-align: center;
+            width: calc(100% / 6);
+            padding: 20px 0;
+            color: #777;
+            i{
+                color: #f00;
+                font-size: 20px;
+                cursor: pointer;
+            }
+            img{
+                width: 80px;
+            }
+            input{
+                width: 50px;
+                padding: 10px 0;
+                text-align: center;
+            }
+        }
+    }
+}
+.sale{
+    margin: calc(3 * $sec-pad) 0;
+    .container{
+        .coupon{
+            flex: 1;
+            text-align: center;
+            margin-bottom: calc(2 * $sec-pad);
+            form{
+                @include flexBox(false, false, center, center, false, false);
+                input:first-child{
+                    border: 1px solid #aaa;
+                    border-right: none;
+                    border-top-left-radius: 5px;
+                    border-bottom-left-radius: 5px;
+                    padding: 15px;
+                    width: 100%;
+                }
+                input:last-child{
+                    color: #fff;
+                    background-color: $hover-color;
+                    font-weight: bold;
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                    cursor: pointer;
+                    border: none;
+                    padding: 16px 20px;
+                }
+            }
+        }
+        .receipt{
+            flex: 1;
+            border: 1px solid #aaa;
+            padding: 25px;
+            *{
+                margin: 0;
+            }
+            table{
+                border-spacing: 0px;
+                margin: 25px 0;
+                width: 100%;
+                tr{
+                    &:not(:last-of-type) td{
+                        color: #777;
+                    }
+                    &:last-of-type td{
+                        font-weight: bold;
+                    }
+                    td{
+                        border: 1px solid #ddd;
+                        padding: 15px;
+                    }
+                }
+            }
+            button{
+                color: #fff;
+                background-color: $hover-color;
+                font-weight: bold;
+                border-radius: 5px;
+                cursor: pointer;
+                border: none;
+                padding: 12.5px 20px;
+            }
+        }
+        @include breakPoints(1, 768px, false){
+            @include flexBox(false, false, space-between, false, false, 25px);
+            .coupon{
+                text-align: left;
+                form{
+                    max-width: 400px;
+                }
+            }
+        }
+    }
+}

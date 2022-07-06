@@ -1,0 +1,89 @@
+@use "../../scss_include/variables.scss" as *;
+@use "../../scss_include/mixins.scss" as *;
+.products{
+    padding-bottom: calc($sec-pad * 2);
+    .container{
+        @include gridBox(repeat(auto-fill, minmax(225px, 1fr)), false, 20px, 20px);
+        // in size of 2425px the all 8 products will be aside each other, so i make the size of each of them is 1fraction because of too large devices
+        @include breakPoints(1, 2425px, false){
+            @include gridBox(repeat(8, 1fr), false, 35px, 35px);
+        }
+        .product{
+            padding: 12px;
+            padding-bottom: 0;
+            box-shadow: 0px 0px 5px -2px;
+            border-radius: 15px;
+            cursor: pointer;
+            &:hover{
+                .info .static h4:first-of-type{
+                    color: $hover-color;
+                }
+            }
+            img{
+                width: 100%;
+                border-radius: 15px;
+            }
+            .info{
+                padding: calc($sec-pad / 2) 0 0;
+                .static{
+                    h5{
+                        font-size: 15px;
+                        color: #aaa;
+                        margin: 0;
+                    }
+                    h4:first-of-type{
+                        margin: 5px 0;
+                    }
+                }
+                .op{
+                    margin: 5px 0 15px;
+                    @include flexBox(false, false, space-between, center, false, false);
+                    h4:last-of-type{
+                        color: $hover-color;
+                        font-size: 18px;
+                        margin: 0;
+                    }
+                    i:before{
+                        padding: 10px 12px 10px 10px;
+                        border-radius: 50%;
+                        color: $hover-color;
+                        background-color: #ddd;
+                        font-size: 25px;
+                    }
+                    i.icon-check:before{
+                        padding: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+.notify{
+    @include flexBox(false, false, space-between, center, false, false);
+    display: none;
+    width: 500px;
+    padding: 15px 25px;
+    background-color: #ddd;
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    z-index: 100;
+    border-radius: 10px;
+    span{
+        i:before{
+            font-size: initial;
+            padding: 7px;
+            background-color: $hover-color;
+            border: none;
+            border-radius: 50%;
+            color: #fff;
+        }
+        span{
+            margin-left: 10px;
+        }
+    }
+    > i::before{
+        font-size: 25px;
+        cursor: pointer;
+    }
+}

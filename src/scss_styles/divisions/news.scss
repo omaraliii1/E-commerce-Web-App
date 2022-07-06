@@ -1,0 +1,56 @@
+@use "../../scss_include/variables.scss" as *;
+@use "../../scss_include/mixins.scss" as *;
+.news{
+    margin: calc(2 * $sec-pad) 0;
+    padding: 50px 0;
+    background-image: url("img/banner/b14.png");
+    background-position: 20% 30%;
+    background-color: #041e42;
+    .container{
+        @include flexBox(false, false, space-between, center, false, false);
+        div{
+            flex: 1;
+            color: #fff;
+            h2{
+                margin: 0 0 10px;
+            }
+            h5{
+                margin: 0;
+                opacity: 0.4;
+                font-size: 16px;
+                font-weight: 100;
+                span{
+                    color: $hover-color;
+                    font-weight: bold;
+                }
+            }
+        }
+        form{
+            flex: 1;
+            @include flexBox(false, false, false, center, false, false);
+            input:first-child{
+                border: none;
+                border-top-left-radius: 2.5px;
+                border-bottom-left-radius: 2.5px;
+                padding: 15px;
+                width: 100%;
+            }
+            input:last-child{
+                color: #fff;
+                background-color: $hover-color;
+                font-weight: bold;
+                border-top-right-radius: 2.5px;
+                border-bottom-right-radius: 2.5px;
+                cursor: pointer;
+                border: none;
+                padding: 15px;
+            }
+        }
+        @include breakPoints(2, 767px, false){
+            @include flexBox(true, false, center, flex-start, 10px, false);
+            form{
+                width: 100%;
+            }
+        }
+    }
+}

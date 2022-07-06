@@ -1,0 +1,12 @@
+extends index.pug 
+block pages 
+    li: a(href="index.html") Home
+    li: a(href="shop.html") Shop
+    li: a(href="blog.html") Blog
+    li.current: a(href="about.html") About
+    li: a(href="contact.html") Contact
+block content
+    .highlighted.about #[.heading #[h2 #KnowUs] #[p lorem ipsum dolor sit amet, consectetur]]
+    .whoUs: .container #[.demo: img(src="img/about/a6.jpg" title="who we are")] #[.info #[h2 Who We Are?] #[p.txt Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, consequatur dolores laboriosam dolorum aspernatur accusamus ex! Eos sint alias voluptate culpa molestiae, consequatur, repellat neque magni dolores quod quas dolorem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, consequatur dolores laboriosam dolorum aspernatur accusamus ex! Eos sint alias voluptate culpa molestiae, consequatur, repellat neque magni dolores quod quas dolorem.] #[abbr(title="")  Create Stunning images with as much or as little control as you like thanks to a choice of Basic and Creative modes] #[marquee(bgcolor="#ccc" loop="-1" scrollamount="5" width="100%")  Create Stunning images with as much or as little control as you like thanks to a choice of Basic and Creative modes]]
+    .vid #[h2 Download Our #[a(href="https://github.com/Abd-Elrhman-Osama/E-commerce-Web-App") #[span App]]] #[video(src="img/about/1.mp4" width="80%" autoplay loop muted)]
+    .features: .container: +features(feats)

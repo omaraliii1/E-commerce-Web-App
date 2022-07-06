@@ -1,0 +1,30 @@
+@use "../../scss_include/variables.scss" as *;
+*{
+    box-sizing: border-box;
+}
+.container{
+    width: 85%;
+    margin: 0 auto;
+}
+.heading{
+    padding: 0 10px calc(2 * $sec-pad);
+    text-align: center;
+    h2{
+        font-size: 50px;
+        margin-bottom: 0;
+    }
+    p{
+        color: #aaa;
+    }
+}
+button{
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+input:focus,
+textarea:focus{
+    outline: none;
+}

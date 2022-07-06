@@ -1,0 +1,47 @@
+include ../pugjs_include/variables.pug
+include ../pugjs_include/mixins.pug
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="all.css")
+        title Easy Shopping
+    body
+        .spinner #[.rect1] #[.rect2] #[.rect3] #[.rect4] #[.rect5]
+        .notify #[span #[i.icon-check] #[span Product was added successfully]] #[i.icon-close]
+        header: .container
+                    a(href="index.html"): img(src="img/logo.png", alt="logo")
+                    ul.navbar
+                        li
+                            ul.pages
+                                li: i.icon-close
+                                block pages 
+                                    li.current: a(href="index.html") Home
+                                    li: a(href="shop.html") Shop
+                                    li: a(href="blog.html") Blog
+                                    li: a(href="about.html") About
+                                    li: a(href="contact.html") Contact
+                        block cart
+                            li: a(href="cart.html"): i.icon-shopping-cart
+                        li: <i class="icon-dedent"></i>
+        block content
+            .landing-page: .container #[.info #[h4 Trade-in-offer] #[h2 Super value deals] #[h2 On all products] #[p Save more with coupons & up to 70% off!] #[button: a(href="shop.html") Shop Now]] 
+            .features: .container: +features(feats)
+            .products #[.heading #[h2 Featured Products] #[p Summer Collection New Modern Design]] #[.container #[+products(products)]]
+            .cut-off #[h4 Repair Services] #[h2 Up to #[span 70% Off] - All T-shirts & Accessories] #[a(href="about.html" title="About Us") Explore More]
+            .products #[.heading #[h2 New Arrivals] #[p Summer Collection New Modern Design]] #[.container #[+products(arrivals)]]
+            .banner #[.container #[+st-banner(st)] #[+nd-banner(nd)]]
+        .news #[.container #[div #[h2 Sign Up For Newsletters] #[h5 Get E-mail updates about our latest shop and #[span special offers.]]] #[form #[input(type="email" placeholder="Your email address")] #[input(type="submit", value="Sign Up")]]]
+        footer: .container 
+                    .col 
+                        .logo: img(src="img/logo.png", alt="logo")
+                        .contact-info #[h3 Contact] #[p #[span Address: ]562 Wellington Road. Street 32. San Francisco] #[p #[span Phone: ]+01 2222 365/(+91) 01 2345 6789] #[p #[span Hours: ]10:00-18:00. Mon-Sat]
+                        .social #[h3 Follow Us] #[<i class="icon-facebook"></i>] #[<i class="icon-twitter"></i>] #[i.icon-instagram] #[<i class="icon-pinterest-p"></i>] #[<i class="icon-youtube-play"></i>]
+                    .col 
+                        .unique #[.about #[h3 About] #[ul #[li About Us] #[li Delivery Information] #[li Privacy Policy] #[li Terms & Conditions] #[li Contact Us]]] #[.acc #[h3 My Account] #[ul #[li Sign In] #[li View Cart] #[li My Wishlist] #[li Track My Order] #[li Help]]]
+                    .col
+                        .sources #[h3 Install App] #[p From App Store or Google Play] #[.platforms #[img(src="img/pay/app.jpg", alt="app store")] #[img(src="img/pay/play.jpg", alt="google play")]] #[p Secured Payment Gateways] #[img(src="img/pay/pay.png", alt="payment methods")]
+        .sign &#169;2022. Abdelrhman Osama
+        script(src="all.js")

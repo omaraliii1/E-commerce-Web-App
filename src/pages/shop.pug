@@ -1,0 +1,11 @@
+extends index.pug 
+block pages 
+    li: a(href="index.html") Home
+    li.current: a(href="shop.html") Shop
+    li: a(href="blog.html") Blog
+    li: a(href="about.html") About
+    li: a(href="contact.html") Contact
+block content
+    .highlighted.shop #[.heading #[h2 #stayhome] #[p Save more with coupons & up to 70% off!]]
+    .products #[.container #[+products(products)] #[+products(arrivals)]]
+    .pagination #[.one 1] #[a(href="shop.html") #[.two 2]] #[.more: i.icon-long-arrow-right]

@@ -1,0 +1,29 @@
+@use "../../scss_include/variables.scss" as *;
+@use "../../scss_include/mixins.scss" as *;
+.features{
+    padding-bottom: calc($sec-pad * 2);
+    .container{
+        @include gridBox(repeat(auto-fill, minmax(152px, 1fr)), false, 15px, 15px);
+        // in size of 1234px the all 6 features will be aside each other, so i make the size of each of them is 1fraction because of too large devices
+        @include breakPoints(1, 1234px, false){
+            @include gridBox(repeat(6, 1fr), false, 30px, 30px);
+        }
+        .feat{
+            @include flexBox(true, false, center, center, 10px, false);
+            box-shadow: 0px 0px 5px -2px;
+            padding-top: 20px;
+            h4{
+                font-size: 15px;
+                padding: 5px 10px;
+                width: fit-content;
+                border-radius: 5px;
+            }
+            @each $i, $bck, $color in $feats-style{
+                &:nth-child(#{$i}) h4{
+                    background-color: $bck;
+                    color: $color;
+                }
+            }
+        }
+    }
+}

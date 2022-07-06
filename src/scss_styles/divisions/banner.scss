@@ -1,0 +1,85 @@
+@use "../../scss_include/variables.scss" as *;
+@use "../../scss_include/mixins.scss" as *;
+.banner{
+    margin: $sec-pad 0;
+    .container{
+        @include gridBox(false, repeat(5, 1fr), 20px, false);
+        div{
+            background-position-x: center;
+            padding: 100px 25px;
+            color: #fff;
+            @include flexBox(true, false, center, flex-start, 10px, false);
+            &:first-child{
+                @include bck-img("img/banner/b17.jpg")
+            }
+            &:nth-child(2){
+                @include bck-img("img/banner/b10.jpg")
+            }
+            &:nth-child(3){
+                @include bck-img("img/banner/b7.jpg")
+            }
+            &:nth-child(4){
+                @include bck-img("img/banner/b4.jpg")
+            }
+            &:last-child{
+                @include bck-img("img/banner/b18.jpg")
+            }
+            *{
+                margin: 0;
+            }
+            h4, h5{
+                opacity: 0.7;
+            }
+            button{
+                border: 2px solid #fff;
+                border-radius: 0;
+                padding: 10px 15px;
+                background-color: transparent;
+                transition: 0.3s;
+            }
+            &:hover{
+                button{
+                    border-color: $hover-color;
+                    background-color: $hover-color;
+                }
+            }
+            p{
+                color: #f00;
+                opacity: 0.5;
+                font-weight: bold;
+            }
+        }
+        @include breakPoints(3, 768px, 991px){
+            @include gridBox(repeat(3, 1fr), repeat(3, 1fr), 20px, 20px);
+            div{
+                &:first-child{
+                    grid-area: 1 / 1 / span 1 / span 3;
+                }
+                &:nth-child(2){
+                    grid-area: 2 / 1 / span 1 / span 3;
+                    margin-top: -20px;
+                }
+            }
+        }
+        @include breakPoints(1, 992px, false){
+            @include gridBox(repeat(6, 1fr), repeat(2, 1fr), 20px, 20px);
+            div{
+                &:first-child{
+                    grid-area: 1 / 1 / span 1 / span 3;
+                }
+                &:nth-child(2){
+                    grid-area: 1 / 4 / span 1 / span 3;
+                }
+                &:nth-child(3){
+                    grid-area: 2 / 1 / span 1 / span 2;
+                }
+                &:nth-child(4){
+                    grid-area: 2 / 3 / span 1 / span 2;
+                }
+                &:last-child{
+                    grid-area: 2 / 5 / span 1 / span 2;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,97 @@
+@use "../../scss_include/variables.scss" as *;
+@use "../../scss_include/mixins.scss" as *;
+.location{
+    margin-bottom: calc(3 * $sec-pad);
+    .container{
+        .info{ 
+            margin-bottom: $sec-pad;
+            h5{
+                font-weight: 200;
+                color: #777;
+            }
+            > div{
+                @include flexBox(false, false, false, center, false, 25px);
+                p{
+                    color: #777;
+                }
+            }
+        }
+        @include breakPoints(1, 768px, false){
+            @include flexBox(false, false, space-between, center, false, 20px);
+            > *{
+                flex: 1;
+            }
+        }
+    }
+}
+.contact{
+    @include breakPoints(1, 768px, false){
+        border: 1px solid #ddd;
+        width: calc(100% - 50px);
+        margin: auto;
+        padding: calc(2 * $sec-pad) 0;
+    }
+    margin-bottom: calc(3 * $sec-pad);
+    overflow-x: hidden;
+    .container{
+        form{
+            @include flexBox(true, false, space-between, false, 20px, false);
+            margin-bottom: $sec-pad;
+            *{
+                margin: 0;
+            }
+            h5{
+                color: #777;
+            }
+            h2{
+                font-size: 35px;
+            }
+            input,
+            textarea{
+                width: 100%;
+                padding: 10px;
+                &::placeholder{
+                    color: #aaa;
+                }
+            }
+            textarea{
+                height: 200px;
+            }
+            input:last-of-type{
+                background-color: $hover-color;
+                border: none;
+                border-radius: 5px;
+                width: fit-content;
+                color: #fff;
+                font-weight: bold;
+                padding: 10px 25px;
+                cursor: pointer;
+            }
+        }
+        .testimonials{
+            @include flexBox(true, false, space-between, false, 25px, false);
+            > div{
+                margin: 0;
+            }
+            .per{
+                
+                @include flexBox(false, false, false, center, false, 25px);
+                .info{
+                    @include flexBox(true, false, space-between, false, 10px, false);
+                    *{
+                        margin: 0;
+                    }
+                    ul{
+                        color: #777;
+                    }
+                }
+            }
+        }
+        @include breakPoints(1, 768px, false){
+            @include flexBox(false, false, space-between, center, false, 50px);
+            form{
+                width: 60%;
+            }
+        }
+    }
+}

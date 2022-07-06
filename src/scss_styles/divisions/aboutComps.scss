@@ -1,0 +1,53 @@
+@use "../../scss_include/variables.scss" as *;
+@use "../../scss_include/mixins.scss" as *;
+.highlighted.about{
+    @include bck-img("img/about/banner.png");
+}
+.whoUs{
+    margin-bottom: calc(3 * $sec-pad);
+    .container{
+        .demo > img{
+            width: 100%;
+        }
+        .info{
+            h2{
+                font-size: 35px;
+                text-align: center;
+            }
+            abbr{
+                margin-bottom: 15px;
+                display: block;
+            }
+        }
+        @include breakPoints(1, 768px, false){
+            @include flexBox(false, false, space-between, center, false, 25px);
+            > div{
+                flex: 1;
+            }
+            .info h2{
+                text-align: left;
+            }
+        }
+    }
+}
+
+.vid{
+    text-align: center;
+    margin-bottom: 25px;
+    h2{
+        font-size: 40px;
+        font-weight: 900;
+        span{
+            text-decoration: underline;
+            color: #491A7F;
+            cursor: pointer;
+        }
+    }
+    video{
+        border-radius: 25px;
+        margin-bottom: calc(3 * $sec-pad);
+        @include breakPoints(1, 768px, false){
+            width: 60%;
+        }
+    }
+}

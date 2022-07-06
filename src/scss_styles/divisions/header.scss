@@ -1,0 +1,90 @@
+@use "../../scss_include/variables.scss" as *;
+@use "../../scss_include/mixins.scss" as *;
+header{
+    background-color: #e3e6f3;
+    padding: 0;
+    max-height: 70px;
+    position: sticky;
+    z-index: 2;
+    top: 0;
+    box-shadow: 0 -15px 20px 0px #000;
+    overflow: hidden;
+    .container{
+        @include flexBox(false, false, space-between, center, false, false);
+        .navbar{
+            @include flexBox(false, false, space-between, center, false, 25px);
+            > li{
+                .pages{
+                    @include flexBox(false, false, space-between, center, false, 25px);
+                    > li{
+                        position: relative;
+                        font: {
+                            size: 20px;
+                            weight: 500;
+                        }
+                        &:first-child{
+                            font-size: 25px;
+                            cursor: pointer;
+                            @include breakPoints(1, 768px, false){
+                                display: none;
+                            }
+                        }
+                        &:not(:first-child)::before{
+                            content: "";
+                            width: 0;
+                            height: 2px;
+                            background-color: $hover-color;
+                            transition-duration: 0.3s;
+                            position: absolute;
+                            bottom: -10px;
+                            left: 0;
+                        }
+                        &:hover{
+                            color: $hover-color;
+                            &:not(:first-child)::before{
+                                width: 60%;
+                            }
+                        }
+                        &.current{
+                            color: $hover-color;
+                            &::before{
+                                width: 60%;
+                            }
+                        }
+                    }
+                    @include breakPoints(2, 767px, false){
+                        @include flexBox(true, false, flex-start, flex-start, 25px, false);
+                        background-color: #e3e6f3;
+                        padding: 25px 25px 0;
+                        width: 200px;
+                        height: 100vh;
+                        transition-duration: 0.3s;
+                        position: fixed;
+                        top: 0;
+                        > li{
+                            margin-bottom: 25px;
+                        }
+                    } 
+                }
+                &:nth-child(2){
+                    font-size: 25px;
+                    &:hover,
+                    &.current{
+                        color: $hover-color;
+                    }
+                }
+                &:last-child{
+                    cursor: pointer;
+                    margin-left: 10px;
+                    font-size: 25px;
+                    &:hover{
+                        color: $hover-color;
+                    }
+                    @include breakPoints(1, 768px, false){
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

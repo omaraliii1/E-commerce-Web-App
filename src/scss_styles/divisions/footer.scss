@@ -1,0 +1,81 @@
+@use "../../scss_include/variables.scss" as *;
+@use "../../scss_include/mixins.scss" as *;
+footer{
+    margin: calc(2 * $sec-pad) 0;
+    .container{
+        .contact-info{
+            margin-bottom: 40px;
+            p{
+                span{
+                    font-weight: bold;
+                }
+            }
+        }
+        .social{
+            margin-bottom: 20px;
+            i{
+                margin-right: 5px;
+                font-size: 18px;
+                cursor: pointer;
+            }
+            i:first-of-type:hover{
+                color: #3b5998;
+            }
+            i:nth-of-type(2):hover{
+                color: #1DA1F2;
+            }
+            i:nth-of-type(3):hover{
+                color: #C13584;
+            }
+            i:nth-of-type(4):hover{
+                color: #c8232c;
+            }
+            i:last-of-type:hover{
+                color: #f00;
+            }
+        }
+        .unique{
+            .about ul li,
+            .acc ul li{
+                font-weight: 100;
+                opacity: 0.5;
+                margin-top: 10px;
+            }
+            @include flexBox(false, false, space-between, false, false, false);
+        }
+        .sources{
+            p{
+                font-weight: 100;
+                opacity: 0.5;
+            }
+            .platforms{
+                img{
+                    border: 2px solid $hover-color;
+                    border-radius: 5px;
+                }
+            }
+        }
+        @include breakPoints(1, 768px, false){
+            @include gridBox(repeat(2, 1fr), false, false, 50px);
+            .col:first-child,
+            .col:last-child{
+                grid-column: 1 / 1;
+            }
+            .col:nth-child(2){
+                grid-column: 2 / 2;
+            }
+        }
+        @include breakPoints(1, 1200px, false){
+            @include flexBox(false, false, space-between, false, false, false);
+            .col{
+                width: calc(100% / 3);
+            }
+        }
+    }
+}
+.sign{
+    font-weight: bold;
+    opacity: 0.5;
+    text-align: center;
+    margin-bottom: 50px;
+}

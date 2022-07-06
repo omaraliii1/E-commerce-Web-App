@@ -1,0 +1,11 @@
+extends index.pug 
+block pages 
+    li: a(href="index.html") Home
+    li: a(href="shop.html") Shop
+    li.current: a(href="blog.html") Blog
+    li: a(href="about.html") About
+    li: a(href="contact.html") Contact
+block content
+    .highlighted.blog #[.heading #[h2 #readmore] #[p Read all case studies about our products!]]
+    .cases: .container #[.case #[.demo #[h2 13/01] #[img(src="img/blog/b1.jpg" alt="case")]] #[.info #[h3 The Cotton-Jersey Zip-Up Hodiee] #[p kickstarter man braid godard coloring book. Raclette waistcoat selfies yr wolf chartreuse hexagon irony, godard...] #[h5 CONTINUE READING]]] #[.case #[.demo #[h2 13/04] #[img(src="img/blog/b2.jpg" alt="case")]] #[.info #[h3 How to Style a Quiff] #[p kickstarter man braid godard coloring book. Raclette waistcoat selfies yr wolf chartreuse hexagon irony, godard...] #[h5 CONTINUE READING]]] #[.case #[.demo #[h2 12/01] #[img(src="img/blog/b3.jpg" alt="case")]] #[.info #[h3 Must-Have Skater Girl Items] #[p kickstarter man braid godard coloring book. Raclette waistcoat selfies yr wolf chartreuse hexagon irony, godard...] #[h5 CONTINUE READING]]] #[.case #[.demo #[h2 16/01] #[img(src="img/blog/b4.jpg" alt="case")]] #[.info #[h3 Runway-Inspired Trends] #[p kickstarter man braid godard coloring book. Raclette waistcoat selfies yr wolf chartreuse hexagon irony, godard...] #[h5 CONTINUE READING]]] #[.case #[.demo #[h2 10/03] #[img(src="img/blog/b6.jpg" alt="case")]] #[.info #[h3 AW20 Menswear Trends] #[p kickstarter man braid godard coloring book. Raclette waistcoat selfies yr wolf chartreuse hexagon irony, godard...] #[h5 CONTINUE READING]]]
+    .pagination #[.one 1] #[a(href="blog.html") #[.two 2]] #[.more: i.icon-long-arrow-right]

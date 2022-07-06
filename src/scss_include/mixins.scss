@@ -1,0 +1,44 @@
+@mixin breakPoints($num, $width1, $width2) {
+    @if $num == 1{
+        @media (min-width: #{$width1}) {
+            @content;
+        }
+    }@else if $num == 2{
+        @media (max-width: #{$width1}) {
+            @content;
+        }
+    }@else if $num == 3{
+        @media (min-width: #{$width1}) and (max-width: #{$width2}) {
+            @content;
+        }
+    }
+}
+
+// this mixin enables u to control ur elements
+// the default state of direction is row and wrap is nowrap
+// so if u want to make direction column and wrap nowrap write this(@include flexBox(true, true, ...))
+// u can also choose the horizontal and vertical align by using the last two variables 
+@mixin flexBox($col, $wrap, $H-align, $V-align, $R-gap, $C-gap){
+    display: flex;
+    flex-direction: if($col, column, null);
+    flex-wrap: if($wrap, wrap, null);
+    justify-content: if($H-align, $H-align, null);
+    align-items: if($V-align, $V-align, null);
+    row-gap: if($R-gap, $R-gap, null);
+    column-gap: if($C-gap, $C-gap, null);
+    
+}
+
+@mixin gridBox($cols, $rows, $R-gap, $C-gap){
+    display: grid;
+    grid-template-columns: if($cols, $cols, null);
+    grid-template-rows: if($rows, $rows, null);
+    row-gap: if($R-gap, $R-gap, null);
+    column-gap: if($C-gap, $C-gap, null);
+}
+
+@mixin bck-img($img){
+    background-image: url($img);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
